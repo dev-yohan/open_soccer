@@ -44,6 +44,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#carrierwave for image upload
+gem 'carrierwave'
+
+#cloudinary for image management
+gem 'cloudinary'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

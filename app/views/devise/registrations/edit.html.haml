@@ -1,0 +1,44 @@
+.row
+  .col-md-6
+    .well.bs-component
+
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :class => "form-horizontal" }) do |f|
+        %legend
+          Edit #{resource_name.to_s.humanize}
+        = devise_error_messages!
+        .form-group
+          = f.label :email, :class => "col-lg-2 control-label"
+          .col-lg-10
+            = f.email_field :email, autofocus: true, :class => "form-control"
+
+        .form-group
+          = f.label :name, :class => "col-lg-2 control-label"
+          .col-lg-10
+            = f.text_field :name, autofocus: true, :class => "form-control"
+
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          .form-group
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+        .form-group
+          = f.label :password, :class => "col-lg-2 control-label"
+          %i (leave blank if you don't want to change it)
+          .col-lg-10
+            = f.password_field :password, autocomplete: "off", :class => "form-control"
+        .form-group
+          = f.label :password_confirmation, :class => "col-lg-2 control-label"
+          .col-lg-10
+            = f.password_field :password_confirmation, autocomplete: "off", :class => "form-control"
+        .form-group
+          = f.label :current_password, :class => "col-lg-2 control-label"
+          %i (we need your current password to confirm your changes)
+          .col-lg-10
+            = f.password_field :current_password, autocomplete: "off", :class => "form-control"
+        .form-group
+          .col-lg-10.col-lg-offset-2
+            = f.submit "Update", :class => "btn btn-primary"
+
+      %legend 
+        Cancel my account
+      %p
+        Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+      = link_to "Back", :back
