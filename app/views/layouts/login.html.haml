@@ -6,5 +6,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    = render "devise/shared/header"
     .container
       = yield
+      = render "devise/shared/footer"

@@ -9,9 +9,12 @@ development:
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
-        - linus.mongohq.com:10006
-      username: ymorales
-      password: morales0  
+        - 127.0.0.1:27017
+      #hosts:
+        #- linus.mongohq.com:10006
+      #username: ymorales
+      #password: morales0
+
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
