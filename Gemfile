@@ -6,6 +6,9 @@ gem 'rails', '4.0.2'
 gem 'mongoid', '~> 4'
 gem 'bson_ext'
 
+#gem for mongoid slugs
+gem 'mongoid_slug'
+
 #devise for oauth
 gem 'devise'
 gem 'omniauth'
@@ -46,6 +49,7 @@ end
 
 #carrierwave for image upload
 gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 #cloudinary for image management
 gem 'cloudinary'
