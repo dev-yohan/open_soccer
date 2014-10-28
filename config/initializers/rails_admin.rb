@@ -24,6 +24,21 @@ RailsAdmin.config do |config|
     
   end
 
+  config.model 'League::League' do 
+    
+  end
+
+  config.model 'League::Season' do 
+    
+  end
+
+  config.model 'Match::Match' do 
+    
+  end
+
+  config.model 'Match::CrowdResult' do 
+    
+  end
 
   config.actions do
     dashboard                     # mandatory
