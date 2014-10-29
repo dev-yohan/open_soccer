@@ -1,0 +1,24 @@
+%h4
+  %strong
+    = t("home.matches.last_title")
+
+- matches.each do |match|
+  .panel.panel-default 
+    .panel-heading
+      .row
+        .col-md-8
+          = "#{match.season.league.name} - #{match.season.name}"   
+        .col-md-4
+          %span.glyphicon.glyphicon-plus-sign  
+          %a
+            = t("home.matches.add_result")
+    .panel-body
+      .col-md-2{:style => "text-align:center"}
+        = cl_image_tag(match.home.first.logo, :width => 45, :height => 50, :crop => :scale)
+      .col-md-8{:style => "text-align:center"}
+        = "#{match.home.first.name} - #{match.away.first.name}"
+        %br 
+        %small
+          = match.match_date.strftime("%d/%m/%y %H:%M:%S")  
+      .col-md-2{:style => "text-align:center"}
+        = cl_image_tag(match.away.first.logo, :width => 45, :height => 50, :crop => :scale)  

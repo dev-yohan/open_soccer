@@ -7,6 +7,8 @@ class Match::Match
   slug :name
   field :match_date, type: DateTime
 
+  belongs_to :season, :class_name => "League::Season"
+
   has_and_belongs_to_many :home, :class_name => "Team::Team", :inverse_of => nil
   has_and_belongs_to_many :away, :class_name => "Team::Team", :inverse_of => nil
   

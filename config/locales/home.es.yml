@@ -1,0 +1,6 @@
+es:
+  home:
+    matches:
+      last_title: "Últimos partidos"
+      upcoming_title: "Próximos partidos"
+      add_result: "Aportar resultado"
