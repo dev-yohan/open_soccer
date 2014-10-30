@@ -4,3 +4,6 @@ es:
       last_title: "Últimos resultados"
       upcoming_title: "Próximos partidos"
       add_result: "Aportar resultado"
+
+    seasons:
+      statuses_title: "Tablas de Posiciones"  

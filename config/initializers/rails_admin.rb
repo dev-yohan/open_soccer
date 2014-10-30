@@ -32,6 +32,10 @@ RailsAdmin.config do |config|
     
   end
 
+  config.model 'League::SeasonStatus' do 
+    
+  end
+
   config.model 'Match::Match' do 
     
   end

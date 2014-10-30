@@ -1,0 +1,16 @@
+.table-responsive
+  %table.table
+    %thead
+      %tr
+        %th
+          Posicion
+        %th
+          Equipo    
+
+    %tbody
+      - statuses.each do |status|
+        %tr
+          %td
+            1
+          %td  
+            = status.team.name

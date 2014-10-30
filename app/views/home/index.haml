@@ -6,3 +6,21 @@
 
   .col-md-6
     =  render :partial => 'matches/partials/last_matches', :locals => { :matches => @last_matches } 
+
+.row
+  .col-md-12
+    %h4
+      %strong
+        = t("home.seasons.statuses_title") 
+    / Nav tabs
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active{:role => "presentation"}
+        %a{"data-toggle" => "tab", :href => "#premier", :role => "tab"} 
+          = "#{@premier_league.name}"
+      
+    / Tab panes
+    .tab-content
+      #premier.tab-pane.active{:role => "tabpanel"}
+        =  render :partial => 'seasons/partials/season_status', :locals => { :statuses => @premier_league_statuses } 
+
+      
