@@ -1,0 +1,12 @@
+es:
+  season_status:
+    position_abb: "POS"
+    team_abb: "Equipo"
+    matches_played_abb: "PJ"
+    matches_won_abb: "PG"
+    matches_draw_abb: "PE"
+    matches_lost_abb: "PP"
+    goals_for_abb: "GF"
+    goals_against_abb: "GC"
+    goals_difference_abb: "GD"
+    points_abb: "PTS"

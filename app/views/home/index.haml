@@ -1,26 +1,31 @@
 .row
   .col-md-6
-    %h4
-      %strong
-        = t("home.matches.upcoming_title") 
+    =  render :partial => 'matches/partials/next_matches', :locals => { :matches => @next_matches } 
 
   .col-md-6
     =  render :partial => 'matches/partials/last_matches', :locals => { :matches => @last_matches } 
 
 .row
   .col-md-12
-    %h4
-      %strong
-        = t("home.seasons.statuses_title") 
+    %legend
+      = t("home.seasons.statuses_title") 
     / Nav tabs
     %ul.nav.nav-tabs{:role => "tablist"}
       %li.active{:role => "presentation"}
         %a{"data-toggle" => "tab", :href => "#premier", :role => "tab"} 
-          = "#{@premier_league.name}"
+          = cl_image_tag(@premier_league.logo, :width => 40, :height => 30, :crop => :scale) 
+          = "#{@premier_league.name} - #{@premier_league_current_season.name}"
+
+      %li{:role => "presentation"}
+        %a{"data-toggle" => "tab", :href => "#postobon", :role => "tab"} 
+          = cl_image_tag(@postobon_league.logo, :width => 40, :height => 30, :crop => :scale) 
+          = "#{@postobon_league.name} - #{@postobon_league_current_season.name}"    
       
     / Tab panes
     .tab-content
       #premier.tab-pane.active{:role => "tabpanel"}
-        =  render :partial => 'seasons/partials/season_status', :locals => { :statuses => @premier_league_statuses } 
+        =  render :partial => 'seasons/partials/season_status', :locals => { :season => @premier_league_current_season, :statuses => @premier_league_statuses } 
+      #postobon.tab-pane{:role => "tabpanel"}
+        =  render :partial => 'seasons/partials/season_status', :locals => { :season => @postobon_league_current_season, :statuses => @postobon_league_statuses }   
 
       

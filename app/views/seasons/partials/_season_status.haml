@@ -1,16 +1,49 @@
+
 .table-responsive
   %table.table
     %thead
       %tr
         %th
-          Posicion
+          = t("season_status.position_abb")
         %th
-          Equipo    
+          = t("season_status.team_abb") 
+        %th
+          = t("season_status.matches_played_abb") 
+        %th
+          = t("season_status.matches_won_abb")
+        %th
+          = t("season_status.matches_draw_abb")
+        %th
+          = t("season_status.matches_lost_abb")
+        %th
+          = t("season_status.goals_for_abb")
+        %th
+          = t("season_status.goals_against_abb")
+        %th
+          = t("season_status.goals_difference_abb")   
+        %th
+          = t("season_status.points_abb")                      
 
     %tbody
-      - statuses.each do |status|
+      - statuses.each_with_index do |status,position|
         %tr
           %td
-            1
+            = position + 1
           %td  
             = status.team.name
+          %td
+            = status.matches_played 
+          %td
+            = status.matches_won
+          %td
+            = status.matches_draw
+          %td
+            = status.matches_lost
+          %td
+            = status.goals_for        
+          %td
+            = status.goals_against
+          %td
+            = status.goals_difference
+          %td
+            = status.points      

@@ -1,5 +1,5 @@
 %legend
-  = t("home.matches.last_title")
+  = t("home.matches.upcoming_title") 
 
 - matches.each do |match|
   .panel.panel-default 
@@ -20,4 +20,4 @@
         %small
           = match.match_date.strftime("%d/%m/%y %H:%M:%S")  
       .col-md-2{:style => "text-align:center"}
-        = cl_image_tag(match.away.first.logo, :width => 45, :height => 50, :crop => :scale)  
+        = cl_image_tag(match.away.first.logo, :width => 45, :height => 50, :crop => :scale)
