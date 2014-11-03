@@ -13,7 +13,7 @@
             %a{ "data-toggle" => "modal", "data-target" => "#myModal#{index}"}
               = t("home.matches.add_result")
           - else
-            %a
+            %a{"href" => crowd_result_new_path(:id => match.id)}
               = t("home.matches.add_result")
 
     .panel-body
