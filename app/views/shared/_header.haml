@@ -9,11 +9,22 @@
         Footbalo
   .navbar-collapse.collapse.navbar-responsive-collapse
     %ul.nav.navbar-nav
-    -#
-      %li.active
-        %a{:href => "#"} Active
-      %li
-        %a{:href => "#"} Link
+    
+      - if current_user.nil?  
+        %li
+          %a{:href => "/users/sign_in"}
+            = t("user.sign_in")
+        %li
+          %a{:href => "/users/sign_up"}
+            = t("user.sign_up")
+      - else
+        %li
+          %a
+            = t("user.welcome",:name => current_user.name)
+        %li
+          %a{:href => "/users/sign_out"}
+            = t("user.sign_out")    
+
       %li.dropdown
         %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
           Dropdown

@@ -1,7 +1,7 @@
 %legend
   = t("home.matches.last_title")
 
-- matches.each do |match|
+- matches.each_with_index do |match, index|
   .panel.panel-default 
     .panel-heading
       .row
@@ -9,8 +9,13 @@
           = "#{match.season.league.name} - #{match.season.name}"   
         .col-md-4
           %span.glyphicon.glyphicon-plus-sign  
-          %a
-            = t("home.matches.add_result")
+          - if current_user.nil?
+            %a{ "data-toggle" => "modal", "data-target" => "#myModal#{index}"}
+              = t("home.matches.add_result")
+          - else
+            %a
+              = t("home.matches.add_result")
+
     .panel-body
       .col-md-2{:style => "text-align:center"}
         = cl_image_tag(match.home.first.logo, :width => 45, :height => 50, :crop => :scale)
@@ -21,3 +26,24 @@
           = match.match_date.strftime("%d/%m/%y %H:%M:%S")  
       .col-md-2{:style => "text-align:center"}
         = cl_image_tag(match.away.first.logo, :width => 45, :height => 50, :crop => :scale)  
+
+  .modal.fade{:id => "myModal#{index}"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+            %span.sr-only
+              = t("home.crowd_result.modal_close")
+          %h4.modal-title 
+            = "#{match.home.first.name} - #{match.away.first.name}"
+        .modal-body
+          %p
+            = t("home.crowd_result.modal_copy")
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+            = t("home.crowd_result.modal_close")
+          %button.btn.btn-primary{:type => "button"} 
+            = t("home.crowd_result.modal_login")
+      / /.modal-content
+    / /.modal-dialog        

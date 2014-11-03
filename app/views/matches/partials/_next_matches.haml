@@ -8,9 +8,7 @@
         .col-md-8
           = "#{match.season.league.name} - #{match.season.name}"   
         .col-md-4
-          %span.glyphicon.glyphicon-plus-sign  
-          %a
-            = t("home.matches.add_result")
+          
     .panel-body
       .col-md-2{:style => "text-align:center"}
         = cl_image_tag(match.home.first.logo, :width => 45, :height => 50, :crop => :scale)

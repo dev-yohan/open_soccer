@@ -7,3 +7,8 @@ es:
 
     seasons:
       statuses_title: "Tablas de Posiciones"  
+
+    crowd_result:
+      modal_close: "Cerrar"
+      modal_login: "Iniciar sesión"
+      modal_copy: "Para aportar un resultado debes iniciar sesión"

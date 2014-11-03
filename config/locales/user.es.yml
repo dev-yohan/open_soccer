@@ -1,0 +1,6 @@
+es:
+  user:
+    sign_in: "Iniciar sesión"
+    sign_up: "Registrarse"
+    sign_out: "Cerrar sesión"
+    welcome: "Bienvenido %{name}"
